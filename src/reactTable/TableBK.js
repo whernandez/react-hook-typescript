@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import useCustomColumns from "./hooks/useCustomColumns";
-import getFilters from "./hooks/filters";
 import {useTable, useFilters, useSortBy} from 'react-table'
 // A great library for fuzzy filtering/sorting items
 import matchSorter from 'match-sorter'
@@ -38,10 +36,10 @@ const Styles = styled.div`
 `
 
 // Define a default UI for filtering
-/*function DefaultColumnFilter({
+function DefaultColumnFilter({
                                  column: {filterValue, preFilteredRows, setFilter},
                              }) {
-    const count = preFilteredRows.length;
+    const count = preFilteredRows.length
 
     return (
         <input
@@ -52,7 +50,7 @@ const Styles = styled.div`
             placeholder={`Search ${count} records...`}
         />
     )
-}*/
+}
 
 
 
@@ -84,10 +82,10 @@ function Table({columns, data}) {
     const defaultColumn = React.useMemo(
         () => ({
             // Let's set up our default Filter UI
-            Filter: getFilters,
+            Filter: DefaultColumnFilter,
         }),
         []
-    );
+    )
 
     const {
         getTableProps,
@@ -105,7 +103,7 @@ function Table({columns, data}) {
         },
         useFilters, // useFilters!
         useSortBy  // sort columns!
-    );
+    )
 
     // We don't want to render all of the rows for this example, so cap
     // it for this use case
@@ -179,7 +177,7 @@ function Table({columns, data}) {
 /*filterGreaterThan.autoRemove = val => typeof val !== 'number'*/
 
 function TableComponent() {
-    /*const columns = React.useMemo(
+    const columns = React.useMemo(
         () => [
             {
                 Header: 'Name',
@@ -229,20 +227,20 @@ function TableComponent() {
                         accessor: 'progress',
                         disableFilters: true
 
-                        /!* Filter: SliderColumnFilter,
-                         filter: filterGreaterThan,*!/
+                        /* Filter: SliderColumnFilter,
+                         filter: filterGreaterThan,*/
                     },
                 ],
             },
         ],
         []
-    )*/
+    )
 
     const data = React.useMemo(() => makeData(100), [])
 
     return (
         <Styles>
-            <Table columns={useCustomColumns()} data={data}/>
+            <Table columns={columns} data={data}/>
         </Styles>
     )
 }
