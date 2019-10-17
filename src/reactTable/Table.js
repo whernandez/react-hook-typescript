@@ -139,7 +139,7 @@ const TableComponent = ({useCustomColumns, ...props}) => {
 
     return (
         <Styles>
-            <Table {...props} data={data}/>
+            <Table {...props} columns={useCustomColumns()} data={data}/>
         </Styles>
     )
 }
