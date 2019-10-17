@@ -1,6 +1,6 @@
 import React, {useMemo} from "react";
 
-function useCustomColumns() {
+const useCustomColumns = () => {
     const columns = useMemo(
         () => [
             {
@@ -9,6 +9,7 @@ function useCustomColumns() {
                     {
                         Header: 'First Name',
                         accessor: 'firstName',
+                        filter: 'equals',
                     },
                     {
                         Header: 'Last Name',
@@ -33,7 +34,34 @@ function useCustomColumns() {
                     {
                         Header: 'Visits',
                         accessor: 'visits',
-                        disableFilters: true
+                        Filter: ({column: {filterValue, setFilter, preFilteredRows, id}}) => {
+                            // Calculate the options for filtering
+                            // using the preFilteredRows
+                            const options = useMemo(() => {
+                                const options = new Set()
+                                preFilteredRows.forEach(row => {
+                                    options.add(row.values[id])
+                                })
+                                return [...options.values()]
+                            }, [id, preFilteredRows])
+
+                            // Render a multi-select box
+                            return (
+                                <select
+                                    value={filterValue}
+                                    onChange={e => {
+                                        setFilter(e.target.value || undefined)
+                                    }}
+                                >
+                                    <option value="">All</option>
+                                    {options.map((option, i) => (
+                                        <option key={i} value={option}>
+                                            {option}
+                                        </option>
+                                    ))}
+                                </select>
+                            )
+                        }
 
                         // Filter: NumberRangeColumnFilter,
                         // filter: 'between',

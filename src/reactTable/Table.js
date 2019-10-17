@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import useCustomColumns from "./hooks/useCustomColumns";
-import getFilters from "./hooks/filters";
 import {useTable, useFilters, useSortBy} from 'react-table'
 // A great library for fuzzy filtering/sorting items
 import matchSorter from 'match-sorter'
@@ -37,54 +35,25 @@ const Styles = styled.div`
   }
 `
 
-// Define a default UI for filtering
-/*function DefaultColumnFilter({
-                                 column: {filterValue, preFilteredRows, setFilter},
-                             }) {
-    const count = preFilteredRows.length;
-
-    return (
-        <input
-            value={filterValue || ''}
-            onChange={e => {
-                setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
-            }}
-            placeholder={`Search ${count} records...`}
-        />
-    )
-}*/
-
-
-
-
-
 // Our table component
-function Table({columns, data}) {
-
-    // const filterTypes = React.useMemo(
-    //     () => ({
-    //         // Add a new fuzzyTextFilterFn filter type.
-    //         fuzzyText: fuzzyTextFilterFn,
-    //         // Or, override the default text filter to use
-    //         // "startWith"
-    //         text: (rows, id, filterValue) => {
-    //             return rows.filter(row => {
-    //                 const rowValue = row.values[id]
-    //                 return rowValue !== undefined
-    //                     ? String(rowValue)
-    //                         .toLowerCase()
-    //                         .startsWith(String(filterValue).toLowerCase())
-    //                     : true
-    //             })
-    //         },
-    //     }),
-    //     []
-    // )
+const Table = ({columns, data, props}) => {
 
     const defaultColumn = React.useMemo(
         () => ({
             // Let's set up our default Filter UI
-            Filter: getFilters,
+            Filter: ({column: {filterValue, preFilteredRows, setFilter}}) => {
+                const count = preFilteredRows.length;
+
+                return (
+                    <input
+                        value={filterValue || ''}
+                        onChange={e => {
+                            setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
+                        }}
+                        placeholder={`Search ${count} records...`}
+                    />
+                )
+            },
         }),
         []
     );
@@ -164,85 +133,13 @@ function Table({columns, data}) {
     )
 }
 
-// Define a custom filter filter function!
-/*function filterGreaterThan(rows, id, filterValue) {
-    return rows.filter(row => {
-        const rowValue = row.values[id]
-        return rowValue >= filterValue
-    })
-}*/
-
-// This is an autoRemove method on the filter function that
-// when given the new filter value and returns true, the filter
-// will be automatically removed. Normally this is just an undefined
-// check, but here, we want to remove the filter if it's not a number
-/*filterGreaterThan.autoRemove = val => typeof val !== 'number'*/
-
-function TableComponent() {
-    /*const columns = React.useMemo(
-        () => [
-            {
-                Header: 'Name',
-                columns: [
-                    {
-                        Header: 'First Name',
-                        accessor: 'firstName',
-                    },
-                    {
-                        Header: 'Last Name',
-                        accessor: 'lastName',
-                        disableFilters: true
-                        // Use our custom `fuzzyText` filter on this column
-                        // filter: 'fuzzyText',
-                    },
-                ],
-            },
-            {
-                Header: 'Info',
-                columns: [
-                    {
-                        Header: 'Age',
-                        accessor: 'age',
-                        disableFilters: true
-
-                        // Filter: SliderColumnFilter,
-                        // filter: 'equals',
-                    },
-                    {
-                        Header: 'Visits',
-                        accessor: 'visits',
-                        disableFilters: true
-
-                        // Filter: NumberRangeColumnFilter,
-                        // filter: 'between',
-                    },
-                    {
-                        Header: 'Status',
-                        accessor: 'status',
-                        disableFilters: true
-
-                        // Filter: SelectColumnFilter,
-                        // filter: 'includes',
-                    },
-                    {
-                        Header: 'Profile Progress',
-                        accessor: 'progress',
-                        disableFilters: true
-
-                        /!* Filter: SliderColumnFilter,
-                         filter: filterGreaterThan,*!/
-                    },
-                ],
-            },
-        ],
-        []
-    )*/
+const TableComponent = ({useCustomColumns, ...props}) => {
 
     const data = React.useMemo(() => makeData(100), [])
 
     return (
         <Styles>
-            <Table columns={useCustomColumns()} data={data}/>
+            <Table {...props} data={data}/>
         </Styles>
     )
 }
