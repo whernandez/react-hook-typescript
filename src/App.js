@@ -5,10 +5,17 @@ import TableComponent from "./reactTable/Table";
 import useCustomColumns from "./reactTable/hooks/useCustomColumns";
 
 function App() {
+    const [columns, updateColumns] = useCustomColumns();
+
+    const onHideColumn = () => {
+        updateColumns('firstName');
+    };
+
   return (
     <div className="App">
       <header className="App-header">
-        <TableComponent props={'props'} useCustomColumns={useCustomColumns}/>
+          <button onClick={onHideColumn}>Hide Column</button>
+        <TableComponent props={'props'} columns={columns}/>
       </header>
     </div>
   );

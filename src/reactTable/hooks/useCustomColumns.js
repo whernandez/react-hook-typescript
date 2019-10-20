@@ -1,95 +1,100 @@
-import React, {useMemo} from "react";
+import React, {useMemo, useState} from "react";
 
 const useCustomColumns = () => {
-    const columns = useMemo(
-        () => [
-            {
-                Header: 'Name',
-                columns: [
-                    {
-                        Header: 'First Name',
-                        accessor: 'firstName',
-                        filter: 'equals',
-                    },
-                    {
-                        Header: 'Last Name',
-                        accessor: 'lastName',
-                        disableFilters: true
-                        // Use our custom `fuzzyText` filter on this column
-                        // filter: 'fuzzyText',
-                    },
-                ],
-            },
-            {
-                Header: 'Info',
-                columns: [
-                    {
-                        Header: 'Age',
-                        accessor: 'age',
-                        disableFilters: true
 
-                        // Filter: SliderColumnFilter,
-                        // filter: 'equals',
-                    },
-                    {
-                        Header: 'Visits',
-                        accessor: 'visits',
-                        Filter: ({column: {filterValue, setFilter, preFilteredRows, id}}) => {
-                            // Calculate the options for filtering
-                            // using the preFilteredRows
-                            const options = useMemo(() => {
-                                const options = new Set()
-                                preFilteredRows.forEach(row => {
-                                    options.add(row.values[id])
-                                })
-                                return [...options.values()]
-                            }, [id, preFilteredRows])
+    const [columns, setColumns] = useState(
+        useMemo(
+            () => [
+                {
+                    id: 'firstName',
+                    Header: 'First Name',
+                    accessor: 'firstName',
+                    filter: 'equals',
+                    show: true,
+                },
+                {
+                    Header: 'Last Name',
+                    accessor: 'lastName',
+                    disableFilters: true
+                    // Use our custom `fuzzyText` filter on this column
+                    // filter: 'fuzzyText',
+                },
+                {
+                    Header: 'Age',
+                    accessor: 'age',
+                    disableFilters: true
 
-                            // Render a multi-select box
-                            return (
-                                <select
-                                    value={filterValue}
-                                    onChange={e => {
-                                        setFilter(e.target.value || undefined)
-                                    }}
-                                >
-                                    <option value="">All</option>
-                                    {options.map((option, i) => (
-                                        <option key={i} value={option}>
-                                            {option}
-                                        </option>
-                                    ))}
-                                </select>
-                            )
-                        }
+                    // Filter: SliderColumnFilter,
+                    // filter: 'equals',
+                },
+                {
+                    Header: 'Visits',
+                    accessor: 'visits',
+                    Filter: ({column: {filterValue, setFilter, preFilteredRows, id}}) => {
+                        // Calculate the options for filtering
+                        // using the preFilteredRows
+                        const options = useMemo(() => {
+                            const options = new Set()
+                            preFilteredRows.forEach(row => {
+                                options.add(row.values[id])
+                            })
+                            return [...options.values()]
+                        }, [id, preFilteredRows])
 
-                        // Filter: NumberRangeColumnFilter,
-                        // filter: 'between',
-                    },
-                    {
-                        Header: 'Status',
-                        accessor: 'status',
-                        disableFilters: true
+                        // Render a multi-select box
+                        return (
+                            <select
+                                value={filterValue}
+                                onChange={e => {
+                                    setFilter(e.target.value || undefined)
+                                }}
+                            >
+                                <option value="">All</option>
+                                {options.map((option, i) => (
+                                    <option key={i} value={option}>
+                                        {option}
+                                    </option>
+                                ))}
+                            </select>
+                        )
+                    }
 
-                        // Filter: SelectColumnFilter,
-                        // filter: 'includes',
-                    },
-                    {
-                        Header: 'Profile Progress',
-                        accessor: 'progress',
-                        disableFilters: true
+                    // Filter: NumberRangeColumnFilter,
+                    // filter: 'between',
+                },
+                {
+                    Header: 'Status',
+                    accessor: 'status',
+                    disableFilters: true
 
-                        /* Filter: SliderColumnFilter,
-                         filter: filterGreaterThan,*/
-                    },
-                ],
-            },
-        ],
-        []
+                    // Filter: SelectColumnFilter,
+                    // filter: 'includes',
+                },
+                {
+                    Header: 'Profile Progress',
+                    accessor: 'progress',
+                    disableFilters: true
+
+                    /* Filter: SliderColumnFilter,
+                     filter: filterGreaterThan,*/
+                },
+            ]
+        )
     );
 
-    return columns;
-}
+    const updateColumns = (colId) => {
+        const resultColumn = columns.map((col, index) => {
+            if(col.id === colId) {
+                col.show = false;
+                return col;
+            }
+            else return col;
+        });
+        setColumns(resultColumn);
+    };
+
+    return [columns, updateColumns];
+};
 
 
 export default useCustomColumns;

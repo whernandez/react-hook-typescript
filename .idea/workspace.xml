@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reactTable/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +30,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="Y:/docker/crm_unitex/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../homs/frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -65,7 +71,9 @@
       <workItem from="1571110329802" duration="1568000" />
       <workItem from="1571148559020" duration="8460000" />
       <workItem from="1571233687338" duration="3172000" />
-      <workItem from="1571277725276" duration="5667000" />
+      <workItem from="1571277725276" duration="5707000" />
+      <workItem from="1571453650413" duration="1203000" />
+      <workItem from="1571522158572" duration="15615000" />
     </task>
     <servers />
   </component>
