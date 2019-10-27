@@ -1,0 +1,33 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-react",
+        "tslint:recommended"
+    ],
+    "jsRules": {
+    },
+    "rules": {
+        "member-access": false,
+        "ordered-imports": false,
+        "quotemark": false,
+        "no-console": false,
+        "semicolon": false,
+        "jsx-no-lambda": false
+    },
+    "rulesDirectory": [
+    ],
+    "linterOptions": {
+        "exclude": [
+            "config/**/*.js",
+            "node_modules/**/*.ts"
+        ]
+    }
+}
+
+/*
+defaultSeverity is the level at which errors will be treated. error being the default value will yield red errors within your IDE, whereas warning would display orange warnings.
+"extends": ["tslint-react"]: The rules we are extending from are soley React based — we have removed the tslint-recommended library, some rules of which do not adhere to React syntax.
+"rules": { "rule-name": false, ...}: We can omit rules in the rules block. For example, omiting the member-access rule will stop tslint from reporting that we are missing access types from our functions, (public, private…) — syntax that is not commonly used in React. Another example, ordered-imports, prompts us to order our import statements alphabetically.
+Check out all the rules available here. http://palantir.github.io/tslint/rules/
+"linterOptions": {"exclude": [...]}: Here we are excluding all Javascript files in the config directory and Typescript files within node_modules from TSLint checking.
+*/
