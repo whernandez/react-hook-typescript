@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useDebugValue} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TableComponent from "./reactTable/TableComponent";
+import useCustomColumns from "./reactTable/hooks/useCustomColumns";
 
 const App: React.FC = () => {
+  const {columns, updateColumns} = useCustomColumns();
+
+  useDebugValue(updateColumns);
+  const onHideColumn = () => {
+    updateColumns('firstName');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+         <button onClick={onHideColumn}>Hide Column</button>
+        <TableComponent columns={columns}/>
+        {/*<img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -17,7 +28,7 @@ const App: React.FC = () => {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a>*/}
       </header>
     </div>
   );
