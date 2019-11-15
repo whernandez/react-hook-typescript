@@ -236,7 +236,10 @@ const TableComponent = ({columns, ...props}) => {
     const data = React.useMemo(() => makeData(50), []);
 
     return (
-        <Table columns={columns} data={data}/>
+        <Fragment>
+            <h1>React-Table</h1>
+            <Table columns={columns} data={data}/>
+        </Fragment>
     )
 };
 

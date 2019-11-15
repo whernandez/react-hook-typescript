@@ -7,7 +7,7 @@ interface IColumn {
     id: number,
     Header: string,
     accessor: string,
-    filter: string,
+    filter?: string,
     show: boolean,
     disableFilters: boolean,
     Filter?: Function
@@ -51,7 +51,6 @@ const useCustomColumns = () => {
                     Header: 'Last Name',
                     accessor: 'lastName',
                     show: true,
-                    filter: '',
                     filterValue: "",
                     setFilter: Function,
                     preFilteredRows: [],
@@ -83,8 +82,7 @@ const useCustomColumns = () => {
 
     const updateColumns = (colId: string): void => {
 
-        const resultColumn = columns.map((col, index : number) => {
-            console.log(col)
+        const resultColumn = columns.map((col : any, index : number) => {
             if(col.accessor === colId) {
                 col.show = false;
                 return col;

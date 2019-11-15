@@ -3,18 +3,32 @@ import logo from './logo.svg';
 import './App.css';
 import TableComponent from "./reactTable/TableComponent";
 import useCustomColumns from "./reactTable/hooks/useCustomColumns";
+import BasicForm from "./formik/withFormik/Form";
+import {BasicFormik} from './formik/Basic/Form';
 
 const App: React.FC = () => {
   const {columns, updateColumns} = useCustomColumns();
 
-  useDebugValue(updateColumns);
   const onHideColumn = () => {
     updateColumns('firstName');
+  };
+
+  const initialFormValues = {
+      name: "WinnerSoftRD",
+      phone: "8099999",
+      contacts: [
+          {
+              fullName: 'Wandy',
+              phone: '9999000'
+          }
+      ],
   };
 
   return (
     <div className="App">
       <header className="App-header">
+          <BasicFormik/>
+          <br/>
          <button onClick={onHideColumn}>Hide Column</button>
         <TableComponent columns={columns}/>
         {/*<img src={logo} className="App-logo" alt="logo" />

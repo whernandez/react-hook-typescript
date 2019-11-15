@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reactTable/TableComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reactTable/makeData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/form/Create.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/form/route.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/formik/Basic/Form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/formik/FieldValidatorComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/formik/InputFieldComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/formik/withFormik/Form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/CompanyModel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/RouteComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reactTable/TableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/TableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -33,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hooks-and-standard.bk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/form" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -42,9 +50,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/form" />
+      <recent name="$PROJECT_DIR$/src/formik/Basic" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="Y:\React\react-hook-typescript\src\reactTable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/form" />
+      <recent name="$PROJECT_DIR$/src/routes" />
+      <recent name="$PROJECT_DIR$/src/formik/withFormik" />
       <recent name="$PROJECT_DIR$/src/reactTable" />
       <recent name="Y:\React\react-hook-typescript\src\reactTable\hooks" />
     </key>
@@ -78,7 +92,14 @@
       <workItem from="1571453650413" duration="1203000" />
       <workItem from="1571522158572" duration="15615000" />
       <workItem from="1572057413077" duration="22319000" />
-      <workItem from="1572210041472" duration="14564000" />
+      <workItem from="1572210041472" duration="14807000" />
+      <workItem from="1572308335302" duration="161000" />
+      <workItem from="1572490311605" duration="104000" />
+      <workItem from="1572490577866" duration="3885000" />
+      <workItem from="1572562607373" duration="246000" />
+      <workItem from="1572743721974" duration="28729000" />
+      <workItem from="1572914383037" duration="47000" />
+      <workItem from="1573784688643" duration="4901000" />
     </task>
     <servers />
   </component>
