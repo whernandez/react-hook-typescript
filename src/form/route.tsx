@@ -1,16 +1,16 @@
 import Form from './Form';
-import Create from "./Create";
+import App from "../App";
 
 const routes = [
     {
-        path: '/',
+        path: '/form_hook',
         exact: true,
         component: Form,
     },
     {
-        path: '/create',
+        path: '/',
         exact: true,
-        component: Create,
+        component: App,
     },
 ];
 

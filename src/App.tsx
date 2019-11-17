@@ -1,15 +1,14 @@
-import React, {useDebugValue} from 'react';
+import React, {MouseEvent} from 'react';
 import logo from './logo.svg';
+import {Link} from 'react-router-dom';
 import './App.css';
 import TableComponent from "./reactTable/TableComponent";
 import useCustomColumns from "./reactTable/hooks/useCustomColumns";
-import BasicForm from "./formik/withFormik/Form";
-import {BasicFormik} from './formik/Basic/Form';
 
 const App: React.FC = () => {
   const {columns, updateColumns} = useCustomColumns();
 
-  const onHideColumn = () => {
+  const onHideColumn = (event: MouseEvent<HTMLButtonElement>) => {
     updateColumns('firstName');
   };
 
@@ -27,7 +26,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-          <BasicFormik/>
+          <Link to={'/form_hook'} style={{color:'white'}}>Form</Link>
           <br/>
          <button onClick={onHideColumn}>Hide Column</button>
         <TableComponent columns={columns}/>

@@ -6,12 +6,11 @@ import {routes as form} from "../form/route";
 type route = {
     path: string,
     exact: boolean,
-    component: React.FC
+    component: any
 }
 
-const RoutesComponent: React.FC<{}> = ({}) => {
+const RoutesComponent: React.FC<{}> = () => {
     return (
-        <Router>
         <Switch>
             {form.map((route: route, idx) => {
                 const C = route.component;
@@ -26,7 +25,6 @@ const RoutesComponent: React.FC<{}> = ({}) => {
                 ) : (null);
             })}
         </Switch>
-        </Router>
     )
 }
 
