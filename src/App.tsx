@@ -1,9 +1,10 @@
 import React, {MouseEvent} from 'react';
-import logo from './logo.svg';
 import {Link} from 'react-router-dom';
 import './App.css';
-import TableComponent from "./reactTable/TableComponent";
 import useCustomColumns from "./reactTable/hooks/useCustomColumns";
+import MyTable from "./reactTable/tableWrapper/MyTable";
+import MyPagination from "./reactTable/tableWrapper/MyPagination";
+import TableWrapperComponent from "./reactTable/tableWrapper/TableWrapperComponent";
 
 const App: React.FC = () => {
   const {columns, updateColumns} = useCustomColumns();
@@ -29,7 +30,11 @@ const App: React.FC = () => {
           <Link to={'/form_hook'} style={{color:'white'}}>Form</Link>
           <br/>
          <button onClick={onHideColumn}>Hide Column</button>
-        <TableComponent columns={columns}/>
+          <TableWrapperComponent columns={columns}>
+              <MyTable/>
+              <MyPagination/>
+          </TableWrapperComponent>
+        {/*<TableComponent columns={columns}/>*/}
         {/*<img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

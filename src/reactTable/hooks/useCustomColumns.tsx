@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from "react";
 
-interface IColumn {
+export interface ColumnI {
     filterValue: string,
     setFilter: Function,
     preFilteredRows: Array<any>,
@@ -33,7 +33,7 @@ type optionSelect = {
 }
 
 const useCustomColumns = () => {
-    const [columns, setColumns] = useState<Array<IColumn>>(
+    const [columns, setColumns] = useState<Array<ColumnI>>(
         useMemo(
             () => [
                 {

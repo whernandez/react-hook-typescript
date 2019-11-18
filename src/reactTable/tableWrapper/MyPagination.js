@@ -1,69 +1,7 @@
-import React, {Fragment} from 'react'
-// import styled from 'styled-components'
-import {useTable, useFilters, useSortBy, usePagination} from 'react-table';
-import {FaSortUp, FaSortDown} from 'react-icons/fa';
-// A great library for fuzzy filtering/sorting items
-// import matchSorter from 'match-sorter';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
+import React, {Fragment} from "react";
 
-import makeData from './makeData'
-
-// Our table component
-const Table = ({columns, data, sortIcons, props}) => {
-
-    const defaultColumn = React.useMemo(
-        () => ({
-            // Let's set up our default Filter UI
-            Filter: ({column: {filterValue, preFilteredRows, setFilter}}) => {
-                const count = preFilteredRows.length;
-
-                return (
-                    <input
-                        value={filterValue || ''}
-                        onChange={e => {
-                            setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
-                        }}
-                        placeholder={`Search ${count} records...`}
-                    />
-                )
-            },
-        }),
-        []
-    );
-
-    const {
-        page, // Instead of using 'rows', we'll use page,
-        // which has only the rows for the active page
-
-        // The rest of these things are super handy, too ;)
-        canPreviousPage,
-        canNextPage,
-        pageOptions,
-        pageCount,
-        gotoPage,
-        nextPage,
-        previousPage,
-        setPageSize,
-        state: {pageIndex, pageSize},
-
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable(
-        {
-            columns,
-            data,
-            defaultColumn, // Be sure to pass the defaultColumn option
-            // filterTypes,
-            initialState: {pageIndex: 0},
-        },
-        useFilters, // useFilters!
-        useSortBy,  // sort columns!
-        usePagination // for pagination
-    );
+const MyPagination = (props) => {
+    const { pageCount, gotoPage, canNextPage, pageIndex, canPreviousPage, pageOptions, pageSize, setPageSize} = props;
 
     const getPagination = () => {
         //let i = pageIndex;
@@ -109,59 +47,8 @@ const Table = ({columns, data, sortIcons, props}) => {
         return item;
     };
 
-    // We don't want to render all of the rows for this example, so cap
-    // it for this use case
-    //const firstPageRows = rows.slice(0, 10)
-
     return (
         <Fragment>
-            <PerfectScrollbar>
-                <table {...getTableProps({
-                    className: "footable table table-striped toggle-arrow-tiny table-bordered table-hover"
-                })}>
-                    <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map(column => (
-                                <th {...column.getHeaderProps()}>
-                                    {/* Render the columns filter UI */}
-                                    <div style={{paddingBottom: 'inherit'}}>{column.canFilter ? column.render('Filter') : null}</div>
-
-                                    {/* Add a sort direction indicator */}
-                                    <span {...column.getSortByToggleProps()}>
-                  {column.render('Header')}
-                                        {' '}
-                                        {column.isSorted
-                                            ? column.isSortedDesc
-                                                ? <FaSortUp/>
-                                                : <FaSortDown/>
-                                            : ''}
-                </span>
-
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                    </thead>
-                    <tbody {...getTableBodyProps()}>
-                    {page.map(
-                        (row, i) =>
-                            prepareRow(row) || (
-                                <tr {...row.getRowProps({
-                                    style: i % 2 !== 0 ? {backgroundColor: 'black'} : {}
-                                })}>
-                                    {row.cells.map(cell => {
-                                        return (
-                                            <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                                        )
-                                    })}
-                                </tr>
-                            )
-                    )}
-                    </tbody>
-                </table>
-            </PerfectScrollbar>
-
             <div className={'row'}>
                 <div className={'col-sm-12 text-center'}>
                     <div className="btn-group">
@@ -231,16 +118,5 @@ const Table = ({columns, data, sortIcons, props}) => {
     )
 };
 
-const TableComponent = ({columns, ...props}) => {
 
-    const data = React.useMemo(() => makeData(50), []);
-
-    return (
-        <Fragment>
-            <h1>React-Table</h1>
-            <Table columns={columns} data={data}/>
-        </Fragment>
-    )
-};
-
-export default TableComponent
+export default MyPagination;
