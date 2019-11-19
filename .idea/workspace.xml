@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reactTable/tableWrapper/MyPagination.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reactTable/tableWrapper/MyTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reactTable/tableWrapper/TableWrapperComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/company/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/company/interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/company/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/company/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/config/historyBrowser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/config/redux/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reactTable/TableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/TableComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/CompanyModel.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -41,18 +46,18 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/company" />
+      <recent name="$PROJECT_DIR$/src/form" />
+      <recent name="$PROJECT_DIR$/src/routes" />
+      <recent name="$PROJECT_DIR$/src/formik/withFormik" />
+      <recent name="$PROJECT_DIR$/src/reactTable" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/form" />
       <recent name="$PROJECT_DIR$/src/formik/Basic" />
       <recent name="$PROJECT_DIR$" />
       <recent name="Y:\React\react-hook-typescript\src\reactTable" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/form" />
-      <recent name="$PROJECT_DIR$/src/routes" />
-      <recent name="$PROJECT_DIR$/src/formik/withFormik" />
-      <recent name="$PROJECT_DIR$/src/reactTable" />
-      <recent name="Y:\React\react-hook-typescript\src\reactTable\hooks" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -94,7 +99,8 @@
       <workItem from="1573784688643" duration="5050000" />
       <workItem from="1573919318142" duration="30000" />
       <workItem from="1573959816582" duration="11011000" />
-      <workItem from="1574013890470" duration="11312000" />
+      <workItem from="1574013890470" duration="12309000" />
+      <workItem from="1574125513328" duration="8322000" />
     </task>
     <servers />
   </component>

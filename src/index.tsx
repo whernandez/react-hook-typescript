@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import store from "./core/config/redux/store";
+// import history from "./core/config/historyBrowser";
 import './index.css';
-import App from './App';
 import RoutesComponent from "./routes/RouteComponent";
 import * as serviceWorker from './serviceWorker';
 import {
@@ -13,13 +15,15 @@ import {
 
 ReactDOM.render(
     <Router>
-        <Switch>
-            {/* No weird props here, just use
+        <Provider store={store}>
+            <Switch>
+                {/* No weird props here, just use
             regular `children` elements! */}
-            <Route path="/">
-                <RoutesComponent />
-            </Route>
-        </Switch>
+                <Route path="/">
+                    <RoutesComponent/>
+                </Route>
+            </Switch>
+        </Provider>
     </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
