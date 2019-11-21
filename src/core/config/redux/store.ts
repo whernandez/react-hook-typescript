@@ -8,7 +8,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import history from '../historyBrowser';
-import createRootReducer from './reducers';
+import combineReducers from './reducers';
 //import "regenerator-runtime/runtime";
 //import createSagaMiddleware from "redux-saga";
 //import { combinedSagas } from "./sagas";
@@ -20,11 +20,13 @@ import createRootReducer from './reducers';
 //     return result;
 // };
 
-const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const middlewares = [thunkMiddleware];
+//const middleWareEnhancer = applyMiddleware(...middlewares);
 
 const store = createStore(
-    createRootReducer(history), // new root reducer with router state,
-    composeEnhancers()
+    combineReducers(history), // new root reducer with router state,
+    // composeWithDevTools()
 );
 
 /*export default function configureStore(initialState) {

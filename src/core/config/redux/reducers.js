@@ -7,10 +7,8 @@ import { combineReducers }  from 'redux';
 // TODO: App reducers
 import {companyReducer} from '../../../company/reducer';
 
-const rootReducer = (history: any) => combineReducers({
-    company: companyReducer
+export default (history) => combineReducers({
+    companyReducer
 });
-
-export type appState = ReturnType<typeof rootReducer>
 
 

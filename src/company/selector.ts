@@ -1,9 +1,9 @@
 import {createSelector} from 'reselect';
-import {CompanyStateI} from "./reducer";
-import {CompanyI} from "./interface";
+import {companyReducer, CompanyStateI} from "./reducer";
+import {CompaniesI, CompanyI} from "./interface";
 
-const getCompany = (state : CompanyStateI) : CompanyI => {
-    return state.company;
+const getCompany = (state : any) : CompanyStateI => {
+    return state.companyReducer.company;
 };
 
 export const getCompanySelector = createSelector(getCompany,
