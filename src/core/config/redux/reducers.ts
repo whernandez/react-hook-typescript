@@ -5,8 +5,12 @@
 import { combineReducers }  from 'redux';
 
 // TODO: App reducers
-import companyReducer from '../../../company/reducer';
+import {companyReducer} from '../../../company/reducer';
 
-export default () => combineReducers({
+const rootReducer = (history: any) => combineReducers({
     company: companyReducer
 });
+
+export type appState = ReturnType<typeof rootReducer>
+
+

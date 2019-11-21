@@ -6,7 +6,6 @@ const Form : React.FC<{}> = () => {
 
     const {Form, setName, getName} = useForm();
 
-    console.log(getName);
     return (
         <Fragment>
             <Form/>

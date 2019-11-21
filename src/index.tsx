@@ -9,13 +9,12 @@ import * as serviceWorker from './serviceWorker';
 import {
     BrowserRouter as Router,
     Route,
-    Switch,
-    useParams
+    Switch
 } from 'react-router-dom';
 
 ReactDOM.render(
-    <Router>
-        <Provider store={store}>
+    <Provider store={store}>
+        <Router>
             <Switch>
                 {/* No weird props here, just use
             regular `children` elements! */}
@@ -23,8 +22,8 @@ ReactDOM.render(
                     <RoutesComponent/>
                 </Route>
             </Switch>
-        </Provider>
-    </Router>, document.getElementById('root'));
+        </Router>
+    </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
