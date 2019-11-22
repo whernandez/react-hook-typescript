@@ -10,7 +10,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import history from '../historyBrowser';
 import combineReducers from './reducers';
 //import "regenerator-runtime/runtime";
-//import createSagaMiddleware from "redux-saga";
+import createSagaMiddleware from "redux-saga";
+import {combinedSagas} from "./sagas";
 //import { combinedSagas } from "./sagas";
 
 // const logger = store => next => action => {
@@ -20,13 +21,14 @@ import combineReducers from './reducers';
 //     return result;
 // };
 
+const sagaMiddleware = createSagaMiddleware();
 // const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-// const middlewares = [thunkMiddleware];
-//const middleWareEnhancer = applyMiddleware(...middlewares);
+const middlewares = [sagaMiddleware];
+const middleWareEnhancer = applyMiddleware(...middlewares);
 
 const store = createStore(
     combineReducers(history), // new root reducer with router state,
-    // composeWithDevTools()
+    composeWithDevTools(middleWareEnhancer)
 );
 
 /*export default function configureStore(initialState) {
@@ -38,6 +40,6 @@ const store = createStore(
     return {store, persistor};
 }*/
 
-
+combinedSagas(sagaMiddleware);
 
 export default store;

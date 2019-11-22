@@ -6,11 +6,7 @@ import store from "./core/config/redux/store";
 import './index.css';
 import RoutesComponent from "./routes/RouteComponent";
 import * as serviceWorker from './serviceWorker';
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 ReactDOM.render(
     <Provider store={store}>

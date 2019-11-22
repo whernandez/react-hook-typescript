@@ -5,10 +5,10 @@
 import { combineReducers }  from 'redux';
 
 // TODO: App reducers
-import {companyReducer} from '../../../company/reducer';
+import {contactReducer} from '../../../contact/reducer';
 
 export default (history) => combineReducers({
-    companyReducer
+    contactReducer
 });
 
 

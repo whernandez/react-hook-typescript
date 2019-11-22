@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 
-type Form = {
+type Name = {
     getName : string;
     setName(formName : string) : void;
-    Form() : any
+    Name() : any
 }
 
-const useForm : () => Form = () => {
+const useName : () => Name = () => {
 
-    const [form, setName] = useState("Wandy");
+    const [name, setName] = useState("");
 
     const setFormName = (name : string) => {
         setName(name);
@@ -16,11 +16,11 @@ const useForm : () => Form = () => {
 
     return {
         get getName() {
-            return form;
+            return name;
         },
         setName(formName : string) { setFormName(formName); },
-        Form: () => <h1>{`Form Name: ${form}`}</h1>
+        Name: () => <h1>{`Company Name: ${name}`}</h1>
     }
 };
 
-export default useForm;
+export default useName;

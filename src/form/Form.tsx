@@ -1,15 +1,16 @@
 import React, {Fragment} from "react";
-import useForm from "./Create";
+import useName from "./useName";
 import FormHooks from "./FormHooks";
 
 const Form : React.FC<{}> = () => {
-
-    const {Form, setName, getName} = useForm();
+    const {Name, setName} = useName();
 
     return (
         <Fragment>
-            <Form/>
-            <button onClick={() => setName('Jose')}>Change Form Name</button>
+            <Name/>
+            <button onClick={() => setName("React-Hooks-Form Example")}>Change Company Name from local state</button>
+            <br/>
+            <h1>Contacts</h1>
             <FormHooks/>
         </Fragment>
     )

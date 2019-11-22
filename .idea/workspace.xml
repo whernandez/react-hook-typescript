@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/contact/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contact/interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contact/reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contact/saga.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contact/selector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contact/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/config/redux/sagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/company/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/company/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/config/redux/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/config/redux/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/company/actions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/company/interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/company/reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/company/selector.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/company/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/config/redux/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/config/redux/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/config/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/config/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/form/Create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/form/useName.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/form/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/form/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/form/FormHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/form/FormHooks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -95,6 +113,7 @@
       <workItem from="1574125513328" duration="8368000" />
       <workItem from="1574210971495" duration="9754000" />
       <workItem from="1574297935873" duration="3858000" />
+      <workItem from="1574379633924" duration="11894000" />
     </task>
     <servers />
   </component>

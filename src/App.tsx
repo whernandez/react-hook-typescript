@@ -1,31 +1,16 @@
 import React, {MouseEvent} from 'react';
-import { useSelector } from 'react-redux'
 import {Link} from 'react-router-dom';
 import './App.css';
 import useCustomColumns from "./reactTable/hooks/useCustomColumns";
 import MyTable from "./reactTable/tableWrapper/MyTable";
 import MyPagination from "./reactTable/tableWrapper/MyPagination";
 import TableWrapperComponent from "./reactTable/tableWrapper/TableWrapperComponent";
-import {getCompanySelector} from "./company/selector";
 
 const App: React.FC = () => {
     const {columns, updateColumns} = useCustomColumns();
 
     const onHideColumn = (event: MouseEvent<HTMLButtonElement>) => {
         updateColumns('firstName');
-    };
-
-    console.log(useSelector(getCompanySelector));
-
-    const initialFormValues = {
-        name: "WinnerSoftRD",
-        phone: "8099999",
-        contacts: [
-            {
-                fullName: 'Wandy',
-                phone: '9999000'
-            }
-        ],
     };
 
     return (
