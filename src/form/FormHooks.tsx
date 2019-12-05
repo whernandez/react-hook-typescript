@@ -3,9 +3,9 @@ import {useDispatch, useSelector} from "react-redux";
 import useForm, {FormContext} from "react-hook-form";
 import Input from './Input';
 import * as yup from 'yup';
-import {IContact, IContacts} from "../contact/interface";
 import {getContactSelector, getContactsSelector} from "../contact/selector";
 import {createContact} from "../contact/actions";
+import Contact from "./Contact";
 
 const customValidation = yup.object().shape({
     name: yup.string().required("Name is Required!"),
@@ -14,18 +14,18 @@ const customValidation = yup.object().shape({
 
 const FormHooks = () => {
     const dispatch = useDispatch();
-    const contact: IContact = useSelector(getContactSelector);
-    const contacts: IContacts = useSelector(getContactsSelector);
+    const contact: Contact = useSelector(getContactSelector);
+    const contacts: Array<Contact> = useSelector(getContactsSelector);
 
-    const methods = useForm({
+    const methods = useForm<Contact>({
         validationSchema: customValidation,
         defaultValues: contact
     });
 
     const {errors} = methods;
 
-    // @ts-ignore
-    const onSubmit = (data) => {
+    const onSubmit = (data:Contact) => {
+        // console.log(data, Contact)
         dispatch(createContact(data));
     };
 
@@ -43,10 +43,10 @@ const FormHooks = () => {
 
             <ul>
                 {
-                    contacts.map((contact : IContact, index : number) => {
+                    contacts.map((contact : Contact, index : number) => {
                         return (
                             <div key={index}>
-                                <li>{contact.name}</li>
+                                <li>{contact.getName()}</li>
                                 <li>{contact.email}</li>
                                 <hr/>
                             </div>

@@ -1,18 +1,19 @@
 import {createSelector} from 'reselect';
 import {IContact, IContacts} from "./interface";
+import Contact from "../form/Contact";
 
-const getContact = (state : any) : IContact => {
+const getContact = (state : any) : Contact => {
     return state.contactReducer.contact;
 };
 
-const getContacts = (state : any) : IContacts => {
+const getContacts = (state : any) : Array<Contact> => {
     return state.contactReducer.contacts;
 };
 
 export const getContactSelector = createSelector(getContact,
-    (contact) : IContact => contact
+    (contact) : Contact => contact
 );
 
 export const getContactsSelector = createSelector(getContacts,
-    (contacts) : IContacts => contacts
+    (contacts) : Array<Contact> => contacts
 );

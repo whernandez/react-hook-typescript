@@ -1,17 +1,16 @@
 import * as types from './types';
+import {plainToClass} from "class-transformer";
 import {IContacts, IContact} from "./interface";
+import Contact from "../form/Contact";
 
-export interface ContactStateI {
+export interface IContactState {
     contacts: IContacts,
     contact: IContact
 }
 
-const initialState : ContactStateI = {
-    contacts: [],
-    contact: {
-        name: '',
-        email: ''
-    }
+const initialState : IContactState = {
+    contacts: new Array<Contact>(),
+    contact: new Contact('', '')
 };
 
 export function contactReducer(
@@ -27,10 +26,10 @@ export function contactReducer(
                     name: action.payload
                 }
             };
-        case types.CREATE_CONTACT:
+        case types.CREATE_CONTACT.SUCCESS:
             return {
                 ...state,
-                contacts: [...state.contacts, action.payload]
+                contacts: [...state.contacts, plainToClass(Contact, action.payload)]
             };
         case types.FETCH_CONTACTS:
             return state.contacts;

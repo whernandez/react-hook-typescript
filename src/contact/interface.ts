@@ -1,8 +1,6 @@
+import Contact from "../form/Contact";
 
-export interface IContact {
-    name: string;
-    email: string;
-}
+export interface IContact extends Contact {}
 
 export interface IContacts extends Array<IContact> {}
 

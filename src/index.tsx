@@ -7,6 +7,7 @@ import './index.css';
 import RoutesComponent from "./routes/RouteComponent";
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import "reflect-metadata";
 
 ReactDOM.render(
     <Provider store={store}>

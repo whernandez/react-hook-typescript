@@ -1,7 +1,10 @@
 import {IContacts, IContact} from "./interface";
+import {createTypes} from "../core/config/redux/helperTypes";
+import Contact from "../form/Contact";
 
 // Types
-export const CREATE_CONTACT = 'CREATE_CONTACT';
+export const FETCH_CONTACT = createTypes('FETCH_CONTACT');
+export const CREATE_CONTACT = createTypes('CREATE_CONTACT');
 export const SET_CONTACT = 'SET_CONTACT';
 export const FETCH_CONTACTS = 'FETCH_CONTACTS';
 
@@ -11,9 +14,14 @@ type TSetContactNameAction = {
     payload: string
 }
 
+type TFetchContactAction = {
+    type: typeof FETCH_CONTACT.WATCHER,
+    payload?: IContact
+}
+
 interface ICreateContactAction {
-    type: typeof CREATE_CONTACT
-    payload: IContact
+    type: typeof CREATE_CONTACT.WATCHER | typeof CREATE_CONTACT.SUCCESS
+    payload: Contact
 }
 
 interface IFetchContactAction {
@@ -21,6 +29,10 @@ interface IFetchContactAction {
     payload: IContacts,
 }
 
-export type ContactActionTypes = ICreateContactAction | IFetchContactAction | TSetContactNameAction;
+export type ContactActionTypes =
+    ICreateContactAction |
+    IFetchContactAction |
+    TSetContactNameAction |
+    TFetchContactAction;
 
 

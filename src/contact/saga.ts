@@ -1,6 +1,22 @@
-import React from 'react';
-import {all, call, cps, delay, put, select, takeLatest} from "redux-saga/effects";
+import {all, put, takeLatest} from "redux-saga/effects";
 import * as types from './types';
+import {fetchContactService} from "./service";
+
+/**
+ * Fetch contact
+ * @param action
+ * @returns {IterableIterator<PutEffect<*|{type: *}>|CallEffect>}
+ */
+function* fetchContact(action : types.ContactActionTypes) {
+
+    try {
+        fetchContactService();
+        yield put({type: types.CREATE_CONTACT.SUCCESS, payload: action.payload});
+    } catch (error) {
+        // dispatch a failure action to the store with the error
+        console.log(error)
+    }
+}
 
 /**
  * Create contact
@@ -10,8 +26,7 @@ import * as types from './types';
 function* createContact(action : types.ContactActionTypes) {
 
     try {
-        yield delay(10); // For user experience only
-        console.log(action);
+        yield put({type: types.CREATE_CONTACT.SUCCESS, payload: action.payload});
     } catch (error) {
         // dispatch a failure action to the store with the error
         console.log(error)
@@ -20,6 +35,7 @@ function* createContact(action : types.ContactActionTypes) {
 
 export default function* saga() {
     yield all([
-        yield takeLatest<types.ContactActionTypes>(types.CREATE_CONTACT, createContact),
+        yield takeLatest<types.ContactActionTypes>(types.CREATE_CONTACT.WATCHER, createContact),
+        yield takeLatest<types.ContactActionTypes>(types.FETCH_CONTACT.WATCHER, fetchContact),
     ])
 }
