@@ -5,7 +5,7 @@ import useCustomColumns from "./reactTable/hooks/useCustomColumns";
 import MyTable from "./reactTable/tableWrapper/MyTable";
 import MyPagination from "./reactTable/tableWrapper/MyPagination";
 import TableWrapperComponent from "./reactTable/tableWrapper/TableWrapperComponent";
-
+import FetchContacts from "./contact/queries/FetchContacts";
 const App: React.FC = () => {
     const {columns, updateColumns} = useCustomColumns();
 
@@ -18,6 +18,7 @@ const App: React.FC = () => {
             <header className="App-header">
                 <Link to={'/form_hook'} style={{color: 'white'}}>Form</Link>
                 <br/>
+                <FetchContacts/>
                 <button onClick={onHideColumn}>Hide Column</button>
                 <TableWrapperComponent columns={columns}>
                     <MyTable/>

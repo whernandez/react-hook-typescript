@@ -1,8 +1,8 @@
 import {transformAndValidate} from "class-transformer-validator";
 
 import Contact from "../form/Contact";
-
 export const fetchContactService:Function = async () => {
+
     // @ts-ignore
     const response = await fetchAPIContact();
     // transform the JSON to class instance and validate it correctness
@@ -23,4 +23,4 @@ const fetchAPIContact = () => {
     return Promise.resolve({
         name: ''
     });
-}
+};
