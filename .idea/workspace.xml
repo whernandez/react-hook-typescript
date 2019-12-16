@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/contact/service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/config/redux/helperTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/form/Contact.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contact/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contact/interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact/interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contact/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contact/saga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact/saga.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contact/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact/selector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contact/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/form/FormHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/form/FormHooks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/config/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/config/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reactTable/hooks/useCustomColumns.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/RouteComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/RouteComponent.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +106,11 @@
       <workItem from="1575325369794" duration="616000" />
       <workItem from="1575429604161" duration="1561000" />
       <workItem from="1575505816696" duration="80000" />
-      <workItem from="1575510849295" duration="5804000" />
+      <workItem from="1575510849295" duration="6161000" />
+      <workItem from="1575589849577" duration="492000" />
+      <workItem from="1575596557311" duration="2401000" />
+      <workItem from="1575748683675" duration="336000" />
+      <workItem from="1576455049129" duration="599000" />
     </task>
     <servers />
   </component>

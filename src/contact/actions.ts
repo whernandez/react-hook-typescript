@@ -1,5 +1,5 @@
 import * as types from './types';
-import {IContacts, IContact} from "./interface";
+import {IContacts} from "./interface";
 import Contact from "../form/Contact";
 
 /**

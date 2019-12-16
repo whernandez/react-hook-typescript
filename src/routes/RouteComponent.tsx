@@ -1,6 +1,6 @@
 // TODO: Require Dependency
 import React from "react";
-import {Route, Switch, BrowserRouter as Router,} from "react-router-dom";
+import {Route, Switch,} from "react-router-dom";
 import {routes as form} from "../form/route";
 
 type route = {

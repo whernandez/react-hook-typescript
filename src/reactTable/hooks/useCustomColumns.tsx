@@ -59,7 +59,7 @@ const useCustomColumns = () => {
                     Filter: ({column: {filterValue, setFilter, preFilteredRows, id}} : columnFilter) => {
                         // Calculate the options for filtering
                         // using the preFilteredRows
-                        const options = useMemo(() => {
+                        useMemo(() => {
                             const options = new Set()
                             preFilteredRows.forEach(row => {
                                 options.add(row.values[id])
@@ -76,7 +76,7 @@ const useCustomColumns = () => {
                     // filter: 'fuzzyText',
                 }
             ],
-            undefined
+            []
         )
     );
 
@@ -88,7 +88,6 @@ const useCustomColumns = () => {
                 return col;
             }
             else return col;
-           return col;
         });
         setColumns(resultColumn);
     };

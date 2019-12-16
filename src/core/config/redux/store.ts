@@ -5,8 +5,8 @@
  * The store can be access from whatever places in the application
  * To works needs 4 functions: subscribe, dispatch, getState and reducer
  */
-import { createStore, applyMiddleware, compose } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import {applyMiddleware, createStore} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
 import history from '../historyBrowser';
 import combineReducers from './reducers';
 //import "regenerator-runtime/runtime";

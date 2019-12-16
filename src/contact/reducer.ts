@@ -8,9 +8,11 @@ export interface IContactState {
     contact: IContact
 }
 
+const firstContact = new Contact('First Contact', 'first@contact.com');
+
 const initialState : IContactState = {
-    contacts: new Array<Contact>(),
-    contact: new Contact('', '')
+    contacts: [firstContact],
+    contact: firstContact
 };
 
 export function contactReducer(
@@ -31,8 +33,6 @@ export function contactReducer(
                 ...state,
                 contacts: [...state.contacts, plainToClass(Contact, action.payload)]
             };
-        case types.FETCH_CONTACTS:
-            return state.contacts;
         default:
             return state
     }

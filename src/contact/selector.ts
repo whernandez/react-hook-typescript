@@ -1,5 +1,4 @@
 import {createSelector} from 'reselect';
-import {IContact, IContacts} from "./interface";
 import Contact from "../form/Contact";
 
 const getContact = (state : any) : Contact => {
