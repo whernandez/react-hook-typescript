@@ -5,11 +5,11 @@ import { HttpLink } from 'apollo-link-http';
 // Instantiate required constructor fields
 const cache = new InMemoryCache();
 const link = new HttpLink({
-    uri: 'http://api.consultorio.local/app_dev.php/graphql',
-    fetchOptions: {
-        mode: 'no-cors'
-    },
-    // useGETForQueries: true
+    uri: 'http://api.consultorio.local/app_dev.php/',
+    // fetchOptions: {
+    //     mode: 'no-cors'
+    // }
+    useGETForQueries: true
 });
 
 export default new ApolloClient({
@@ -17,8 +17,8 @@ export default new ApolloClient({
     cache: cache,
     link: link,
     // Provide some optional constructor fields
-    name: 'react-hooks-ts-graphql',
-    version: '0.0.0',
+    // name: 'react-hooks-ts-graphql',
+    // version: '0.0.0',
     queryDeduplication: false,
     defaultOptions: {
         watchQuery: {

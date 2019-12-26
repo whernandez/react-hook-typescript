@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  sample-prod:
+    container_name: sample-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - '8081:80'

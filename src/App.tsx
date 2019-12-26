@@ -13,6 +13,7 @@ const App: React.FC = () => {
         updateColumns('firstName');
     };
 
+
     return (
         <div className="App">
             <header className="App-header">
