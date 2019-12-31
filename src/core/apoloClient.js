@@ -1,10 +1,16 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
+import { createUploadLink } from 'apollo-upload-client';
+
+const up = createUploadLink({
+    uri: 'http://localhost:8080', // Use env var instead
+});
 
 // Instantiate required constructor fields
 const cache = new InMemoryCache();
 const link = new HttpLink({
+    // uri: 'http://localhost:8080',
     uri: 'http://api.consultorio.local/app_dev.php/',
     // fetchOptions: {
     //     mode: 'no-cors'

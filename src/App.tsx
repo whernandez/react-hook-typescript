@@ -19,7 +19,7 @@ const App: React.FC = () => {
             <header className="App-header">
                 <Link to={'/form_hook'} style={{color: 'white'}}>Form</Link>
                 <br/>
-                <FetchContacts/>
+                {/* <FetchContacts/> */}
                 <button onClick={onHideColumn}>Hide Column</button>
                 <TableWrapperComponent columns={columns}>
                     <MyTable/>

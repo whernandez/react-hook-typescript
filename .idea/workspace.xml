@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/apoloClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/apoloClient.js" afterDir="false" />
-    </list>
+    <list default="true" id="8d4aac57-b967-4b92-aa74-0a8b3b9ade44" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../homs/frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -110,6 +107,7 @@
       <workItem from="1576455049129" duration="7271000" />
       <workItem from="1576631803994" duration="5225000" />
       <workItem from="1576808929016" duration="1882000" />
+      <workItem from="1577537542757" duration="31000" />
     </task>
     <servers />
   </component>

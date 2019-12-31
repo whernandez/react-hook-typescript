@@ -9,22 +9,20 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import "reflect-metadata";
 import {ApolloProvider} from '@apollo/react-hooks';
-import apoloClient from "./core/apoloClient";
+import apolloClient from "./core/apoloClient";
+import APOLLO_CLIENT from './core/apolloClient';
+import FetchContacts from './contact/queries/FetchContacts';
+// import { ApolloProvider } from 'react-apollo';
 
 ReactDOM.render(
-    <ApolloProvider client={apoloClient}>
-        <Provider store={store}>
-            <Router>
-                <Switch>
-                    {/* No weird props here, just use
-            regular `children` elements! */}
-                    <Route path="/">
-                        <RoutesComponent/>
-                    </Route>
-                </Switch>
-            </Router>
-        </Provider>
+    <ApolloProvider client={apolloClient}>
+        <FetchContacts/>
     </ApolloProvider>, document.getElementById('root'));
+
+// ReactDOM.render(
+//     <ApolloProvider client={apolloClient}>
+//         <UpdateProfilePictureForm/>
+//     </ApolloProvider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
