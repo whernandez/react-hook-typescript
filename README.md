@@ -1,3 +1,7 @@
+![Type Script](https://img.shields.io/badge/TypeScript-TypeScript-brightgreen)
+![Type Script](https://img.shields.io/badge/React-React--Hook--Form-brightgreen)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
